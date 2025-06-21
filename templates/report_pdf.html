@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Patient Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    h2 { color: #2d2d2d; }
+    .section { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h2 style="text-align: center;">RADIOLOGY DEPARTMENT</h2>
+<h4 style="text-align: center;">CIVIL HOSPITAL ALIBAUG, RAIGAD</h4>
+<hr>
+
+  <hr>
+  <div class="section"><strong>Patient Name:</strong> {{ patient.name }}</div>
+  <div class="section"><strong>Age / Sex:</strong> {{ patient.age }} / {{ patient.sex }}</div>
+  <div class="section"><strong>Referring Doctor:</strong> {{ patient.ref_doc }}</div>
+  <div class="section"><strong>Study Advised:</strong> {{ patient.study }}</div>
+  <div class="section"><strong>Date:</strong> {{ patient.date }}</div>
+  <hr>
+  <div class="section"><strong>Report:</strong><br><br>{{ patient.report | nl2br }}</div>
+</body>
+</html>

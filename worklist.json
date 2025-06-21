@@ -1,0 +1,74 @@
+[
+  {
+    "name": "shreya",
+    "age": "31",
+    "sex": "Female",
+    "ref_doc": "self",
+    "study": "USG ABDO",
+    "date": "2025-06-22 00:24:37",
+    "report": "no significant abnormality"
+  },
+  {
+    "name": "shreya",
+    "age": "31",
+    "sex": "Female",
+    "ref_doc": "self",
+    "study": "USG ABDO",
+    "date": "2025-06-22 00:31:37",
+    "report": ""
+  },
+  {
+    "name": "shreya misal",
+    "age": "31",
+    "sex": "Female",
+    "ref_doc": "self",
+    "study": "usg",
+    "date": "2025-06-22 00:35:06",
+    "report": "no significant abnormality"
+  },
+  {
+    "name": "shreya misal",
+    "age": "31",
+    "sex": "Female",
+    "ref_doc": "self",
+    "study": "usg",
+    "date": "2025-06-22 01:00:16",
+    "report": ""
+  },
+  {
+    "name": "shashikant",
+    "age": "27",
+    "sex": "Male",
+    "ref_doc": "self",
+    "study": "abdo",
+    "date": "2025-06-22 01:00:41",
+    "report": "no significant abnormality\r\n"
+  },
+  {
+    "name": "RAVI",
+    "age": "21",
+    "sex": "Male",
+    "ref_doc": "shashi",
+    "study": "abdo",
+    "date": "2025-06-22 01:10:23",
+    "report": "Ultrasound of Abdomen\r\nFINDINGS:\r\nLIVER: 14.6 cm ,Normal in size ,shape and echotexture. No focal lesion is seen.\r\nCommon bile duct: Visualized common bile duct appears normal in course and calibre.\r\nPortal vein: Normal at porta. Hepatic veins are normal.\r\nGall bladder: Distended. No evidence of calculi/polyp noted within.\r\nSpleen: Normal in size  and echotexture. No focal lesion.\r\nPancreas: Head,body and tail appears normal in size and echotexture.\r\n\r\nRight Kidney: normal in shape, echotexture and cortico-medullary junction. No evidence of hydronephrosis,hydroureter or calculus.\r\nLeft Kidney:, normal in shape, echotexture and cortico-medullary junction. No evidence of hydronephrosis,hydroureter or calculus.\r\n\r\nUrinary Bladder: Distended, normal.\r\nPelvis:  Prostate is seen. It is normal in size and echotexture. No focal lesion is seen. \r\n\r\nMiscellaneous: \r\nNo ascites is seen. \r\nNo lymphadenopathy is seen. \r\nBowel appears unremarkable.\r\n\r\nIMPRESSION:  USG abdomen reveals: \r\n\r\nNo significant abnormality .\r\n\r\n\r\n"
+  },
+  {
+    "name": "gajanan",
+    "age": "32",
+    "sex": "Male",
+    "ref_doc": "baga",
+    "study": "scrotum",
+    "date": "2025-06-22 01:48:35",
+    "report": "no significant abnormality "
+  },
+  {
+    "name": "bhabu",
+    "age": "41",
+    "sex": "Male",
+    "ref_doc": "self",
+    "study": "abdo",
+    "date": "2025-06-22 01:56:00",
+    "report": "no significant abnormality"
+  }
+]

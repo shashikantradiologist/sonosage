@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radiologist Dashboard - Sonosage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand">Sonosage - Radiologist Panel</span>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h4 class="mb-3">Patient Worklist</h4>
+    <table class="table table-bordered table-hover">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Sex</th>
+          <th>Ref. Doctor</th>
+          <th>Study</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for patient in patients %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.sex }}</td>
+          <td>{{ patient.ref_doc }}</td>
+          <td>{{ patient.study }}</td>
+          <td>
+  <a href="/report/{{ loop.index0 }}" class="btn btn-sm btn-primary">Write</a>
+  <a href="/download/{{ loop.index0 }}" class="btn btn-sm btn-outline-secondary">PDF</a>
+  {% if patient.report %}
+    <button class="btn btn-sm btn-success" onclick="alert(`{{ patient.report | escape | replace('\n', ' ') }}`)">View</button>
+  {% else %}
+    <button class="btn btn-sm btn-outline-secondary" disabled>View</button>
+  {% endif %}
+</td>
+
+</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="7" class="text-center">No patients available.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

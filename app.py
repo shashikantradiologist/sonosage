@@ -2,13 +2,11 @@ from flask import Flask, render_template, request, redirect, send_from_directory
 import json
 import os
 from datetime import datetime
-import pdfkit
+from xhtml2pdf import pisa
+
 
 app = Flask(__name__)
 
-# Setup PDF export path
-PDF_PATH = r'C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe'
-pdf_config = pdfkit.configuration(wkhtmltopdf=PDF_PATH)
 
 # File paths
 WORKLIST_FILE = 'worklist.json'
@@ -68,20 +66,29 @@ def report(index):
 
     return render_template('report.html', patient=patient, index=index)
 
+from xhtml2pdf import pisa  # 🔁 New import
+
 @app.route('/download/<int:index>')
 def download_report(index):
     if index >= len(worklist):
         return "Invalid patient index", 404
 
     patient = worklist[index]
+
+    # 🔹 Render the HTML report using Jinja2
     rendered = render_template('report_pdf.html', patient=patient)
 
+    # 🔹 Define the PDF filename
     filename = f"{patient['name'].replace(' ', '_')}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
     pdf_output_path = os.path.join(REPORT_FOLDER, filename)
 
-    pdfkit.from_string(rendered, pdf_output_path, configuration=pdf_config)
+    # 🔹 Create a PDF using xhtml2pdf and save it to file
+    with open(pdf_output_path, "wb") as result_file:
+        pisa.CreatePDF(rendered, dest=result_file)
 
+    # 🔹 Send the PDF back to the user
     return send_from_directory(REPORT_FOLDER, filename, as_attachment=True)
+
 
 @app.route('/preview_pdf/<int:index>')
 def preview_pdf(index):

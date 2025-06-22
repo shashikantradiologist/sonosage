@@ -100,10 +100,13 @@ def preview_pdf(index):
     reports = os.listdir(REPORT_FOLDER)
     matched_file = next((f for f in reports if f.startswith(filename_prefix)), None)
 
+    print("DEBUG → Matched file:", matched_file)  # Debug log
+
     if not matched_file:
         return "PDF not found. Please generate it first."
 
     return render_template('preview_pdf.html', filename=matched_file)
+
 
 @app.route('/static_pdf/<filename>')
 def static_pdf(filename):
